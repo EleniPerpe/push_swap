@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 18:35:11 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/13 20:05:04 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/13 21:09:15 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,13 @@ long	*bubble_sort(long *temp, int len);
 long	*index_play(long *temp, int len);
 long	*array_iteration(long *temp, long *dup_temp, int len);
 long	*commands_time(long *a, int len);
-void	sa(long *a, int len);
 void	*ft_calloc(size_t count, size_t size);
+void	ft_bzero(void *s, size_t a);
+void	sa(long *a, int len);
 void	sb(long *b, int len);
 void	ss(long *b, long *a, int len);
-void	ft_bzero(void *s, size_t a);
+void	ra(long *a, int len);
+void	rb(long *b, int len);
+void	rr(long *b, long *a, int len);
 
 #endif

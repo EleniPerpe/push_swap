@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 14:44:48 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/13 20:06:53 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/13 21:19:18 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,9 +136,13 @@ long	*commands_time(long *a, int len)
 	long	*b;
 
 	b = (long *) ft_calloc(len, sizeof(long));
+	b = ft_strdup(a, len);
 	if (b == NULL)
 		return (NULL);
-	// sa(a, len);
+	// rb(a, len);
+	// print(a, len);
+	rr(a, b, len);
 	print(a, len);
+	print(b, len);
 	return (a);
 }
