@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 14:44:48 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/13 21:19:18 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/14 20:01:16 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,32 @@ void	print(long *a, int len);
 long	*create_stack(char **argv, int argc, int *len, int *i);
 long	*bubble_sort(long *temp, int len);
 long	*index_play(long *temp, int len);
-long	*array_iteration(long *temp, long *dup_temp, int len);
-long	*commands_time(long *a, int len);
+long	*array_iteration(long *temp, long *final_array, int len);
+long	*swap_control(long *a, int len);
+void	print_stack(t_stack *stack);
 
 int	main(int argc, char **argv)
 {
 	char	**stack_a;
 	int		i;
 	long	*temp;
-	long	*dup_temp;
+	long	*final_array;
 	int		len;
+	t_stack	*stack__a;
+	t_stack *stack__b;
 
 	temp = create_stack(argv, argc, &len, &i);
-	print(temp, len);
-	dup_temp = ft_strdup(temp, len);
+	final_array = ft_strdup(temp, len);
 	temp = bubble_sort(temp, len);
-	dup_temp = array_iteration(temp, dup_temp, len);
-	print(dup_temp, len);
-	commands_time(dup_temp, len);
-	free (temp);
+	final_array = array_iteration(temp, final_array, len);
+	stack__a = generate_stack(len);
+	stack__b = generate_stack(len);
+	fill_stack(stack__a, final_array);
+	// pb(stack__a, stack__b);
+	// pb(stack__a, stack__b);
+	print_stack(stack__a);
+	ra(stack__a);
+	print_stack(stack__a);
 	return (0);
 }
 
@@ -47,6 +54,20 @@ void	print(long *a, int len)
 	while (i < len)
 	{
 		printf("%ld\n", a[i]);
+		i++;
+	}
+	printf("\n");
+}
+
+void	print_stack(t_stack *stack)
+{
+	int	i;
+	int	num;
+
+	i = 0;
+	while (i < stack->capacity)
+	{
+		printf("%ld\n", stack->stack[i]);
 		i++;
 	}
 	printf("\n");
@@ -110,7 +131,7 @@ long	*bubble_sort(long *temp, int len)
 	return (temp);
 }
 
-long	*array_iteration(long *temp, long *dup_temp, int len)
+long	*array_iteration(long *temp, long *final_array, int len)
 {
 	int		i;
 	int		j;
@@ -123,26 +144,10 @@ long	*array_iteration(long *temp, long *dup_temp, int len)
 	while (i < len)
 	{
 		j = 0;
-		while (dup_temp[i] != temp[j])
+		while (final_array[i] != temp[j])
 			j++;
 		result[i] = j;
 		i++;
 	}
 	return (result);
-}
-
-long	*commands_time(long *a, int len)
-{
-	long	*b;
-
-	b = (long *) ft_calloc(len, sizeof(long));
-	b = ft_strdup(a, len);
-	if (b == NULL)
-		return (NULL);
-	// rb(a, len);
-	// print(a, len);
-	rr(a, b, len);
-	print(a, len);
-	print(b, len);
-	return (a);
 }
