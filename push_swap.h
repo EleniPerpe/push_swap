@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 18:35:11 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/14 19:57:28 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/14 20:07:42 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ void	sa(long *a, int len);
 void	sb(long *b, int len);
 void	ss(long *b, long *a, int len);
 void	ra(t_stack *a);
-void	rb(long *b, int len);
-void	rr(long *b, long *a, int len);
+void	rb(t_stack *b);
+void	rr(t_stack *a, t_stack *b);
 void	rra(long *a, int len);
 void	rrb(long *b, int len);
 void	rrr(long *a, long *b, int len);

@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 16:01:55 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/14 20:01:20 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/14 20:07:49 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ra(t_stack *a)
 	}
 }
 
-void	rb(long *b, int len)
+void	rb(t_stack *b)
 {
 	int		i;
 	int		j;
@@ -48,21 +48,21 @@ void	rb(long *b, int len)
 	flag = 0;
 	i = 0;
 	j = 1;
-	temp = b[0];
-	while (i < len - 1)
+	temp = b->stack[0];
+	while (i < b->capacity - 1)
 	{
-		b[i] = b[j + i];
+		b->stack[i] = b->stack[j + i];
 		i++;
 		flag = 1;
 	}
 	if (flag == 1)
 	{
-		b[len - 1] = temp;
+		b->stack[b->capacity - 1] = temp;
 		write (1, "rb\n", 3);
 	}
 }
 
-void	rr(long *a, long *b, int len)
+void	rr(t_stack *a, t_stack *b)
 {
 	int		i;
 	int		j;
@@ -72,15 +72,15 @@ void	rr(long *a, long *b, int len)
 
 	i = 0;
 	j = 1;
-	temp_a = a[0];
-	temp_b = b[0];
-	while (i < len - 1)
+	temp_a = a->stack[0];
+	temp_b = b->stack[0];
+	while (i < a->capacity - 1)
 	{
-		b[i] = b[j + i];
-		a[i] = a[j + i];
+		b->stack[i] = b->stack[j + i];
+		a->stack[i] = a->stack[j + i];
 		i++;
 	}
-	a[len - 1] = temp_a;
-	b[len - 1] = temp_b;
+	a->stack[a->capacity - 1] = temp_a;
+	b->stack[a->capacity - 1] = temp_b;
 	write (1, "rr\n", 3);
 }

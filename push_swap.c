@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 14:44:48 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/14 20:01:16 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/14 20:09:36 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,10 @@ int	main(int argc, char **argv)
 	// pb(stack__a, stack__b);
 	// pb(stack__a, stack__b);
 	print_stack(stack__a);
-	ra(stack__a);
+	rr(stack__a, stack__b);
 	print_stack(stack__a);
+	print_stack(stack__b);
+
 	return (0);
 }
 
