@@ -6,63 +6,64 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 16:01:55 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/14 12:22:58 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/15 15:45:31 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(long *a, int len)
+void	sa(t_stack *a)
 {
 	long	temp;
 	int		flag;
 
 	flag = 0;
-	if (len != 0 || len != 1)
+	if (a->size != 0 || a->size != 1)
 	{
-		temp = a[0];
-		a[0] = a[1];
-		a[1] = temp;
+		temp = a->stack[0];
+		a->stack[0] = a->stack[1];
+		a->stack[1] = temp;
 		flag = 1;
 	}
 	if (flag == 1)
 		write (1, "sa\n", 3);
 }
 
-void	sb(long *b, int len)
+void	sb(t_stack *b)
 {
 	long	temp;
 	int		flag;
 
 	flag = 0;
-	if (len != 0 || len != 1)
+	if (b->size != 0 || b->size != 1)
 	{
-		temp = b[0];
-		b[0] = b[1];
-		b[1] = temp;
+		temp = b->stack[0];
+		b->stack[0] = b->stack[1];
+		b->stack[1] = temp;
+		flag = 1;
 	}
 	if (flag == 1)
 		write (1, "sb\n", 3);
 }
 
-void	ss(long *b, long *a, int len)
+void	ss(t_stack *a, t_stack *b)
 {
 	long	temp;
 	int		flag;
 
 	flag = 0;
-	if (len != 0 || len != 1)
+	if (a->size != 0 || a->capacity != 1)
 	{
-		temp = a[0];
-		a[0] = a[1];
-		a[1] = temp;
+		temp = a->stack[0];
+		a->stack[0] = a->stack[1];
+		a->stack[1] = temp;
 		flag++;
 	}
-	if (len != 0 || len != 1)
+	if (b->size != 0 || b->capacity != 1)
 	{
-		temp = b[0];
-		b[0] = b[1];
-		b[1] = temp;
+		temp = b->stack[0];
+		b->stack[0] = b->stack[1];
+		b->stack[1] = temp;
 		flag++;
 	}
 	if (flag == 2)

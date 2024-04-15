@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 19:54:37 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/13 18:39:11 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/15 19:56:29 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ long	ft_atol(char *str)
 	return (result * sign);
 }
 
-long	*ft_strdup(long *s1, int len)
+long	*ft_longdup(long *s1, int len)
 {
 	long	*ptr;
 	int		i;

@@ -6,18 +6,17 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 14:44:48 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/14 20:09:36 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/15 22:22:31 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 void	print(long *a, int len);
-long	*create_stack(char **argv, int argc, int *len, int *i);
+char	**create_array(char **argv, int argc, int *len, int *i);
+void	create_structs(long *final_array, int len);
 long	*bubble_sort(long *temp, int len);
-long	*index_play(long *temp, int len);
 long	*array_iteration(long *temp, long *final_array, int len);
-long	*swap_control(long *a, int len);
 void	print_stack(t_stack *stack);
 
 int	main(int argc, char **argv)
@@ -27,23 +26,29 @@ int	main(int argc, char **argv)
 	long	*temp;
 	long	*final_array;
 	int		len;
-	t_stack	*stack__a;
-	t_stack *stack__b;
 
-	temp = create_stack(argv, argc, &len, &i);
-	final_array = ft_strdup(temp, len);
+	int c;
+	
+	stack_a = create_array(argv, argc, &len, &i);
+	c = check_digits;
+	printf("%d\n", c);
+	if (check_digits(stack_a, len))
+	{
+		write(1, "Error\n", 6);
+		free(stack_a);
+		return (0);
+	}
+	temp = char_to_long(stack_a, len);
+	final_array = ft_longdup(temp, len);
 	temp = bubble_sort(temp, len);
 	final_array = array_iteration(temp, final_array, len);
-	stack__a = generate_stack(len);
-	stack__b = generate_stack(len);
-	fill_stack(stack__a, final_array);
-	// pb(stack__a, stack__b);
-	// pb(stack__a, stack__b);
-	print_stack(stack__a);
-	rr(stack__a, stack__b);
-	print_stack(stack__a);
-	print_stack(stack__b);
-
+	if (check_duplicate(final_array, len) || check_max(final_array, len))
+	{
+		free(temp);
+		free(final_array);
+		return (0);
+	}
+	create_structs(final_array, len);
 	return (0);
 }
 
@@ -75,10 +80,11 @@ void	print_stack(t_stack *stack)
 	printf("\n");
 }
 
-long	*create_stack(char **argv, int argc, int *len, int *i)
+char	**create_array(char **argv, int argc, int *len, int *i)
 {
 	long	*temp;
 	char	**stack_a;
+	int		size;
 
 	if (argc == 2)
 		stack_a = ft_split(argv[1], ' ', i);
@@ -95,13 +101,9 @@ long	*create_stack(char **argv, int argc, int *len, int *i)
 		}
 		stack_a[argc] = NULL;
 	}
-	temp = (long *)malloc(*i * sizeof(long));
-	if (temp == NULL)
-		return (0);
-	*len = *i;
-	while (--(*i) > -1)
-		temp[*i] = ft_atol(stack_a[*i]);
-	return (temp);
+	size = *i;
+	*len = size;
+	return (stack_a);
 }
 
 long	*bubble_sort(long *temp, int len)
