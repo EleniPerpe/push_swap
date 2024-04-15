@@ -6,23 +6,11 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:57:00 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/15 22:13:39 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/15 23:45:59 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	create_structs(long *final_array, int len)
-{
-	t_stack	*stack__a;
-	t_stack	*stack__b;
-
-	stack__a = generate_stack(len);
-	stack__b = generate_stack(len);
-	fill_stack_b(stack__b, final_array);
-	fill_stack(stack__a, final_array);
-	free(final_array);
-}
 
 int	check_duplicate(long *final_array, int len)
 {
@@ -74,9 +62,9 @@ int	check_digits(char **stack_a, int len)
 
 	flag = 0;
 	i = 0;
-	j = 0;
 	while (i < len)
 	{
+		j = 0;
 		while (stack_a[i][j] != '\0')
 		{
 			if (stack_a[i][j] >= '0' && stack_a[i][j] <= '9')

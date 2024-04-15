@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 14:44:48 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/15 22:22:31 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/15 23:51:58 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,7 @@ int	main(int argc, char **argv)
 	long	*final_array;
 	int		len;
 
-	int c;
-	
 	stack_a = create_array(argv, argc, &len, &i);
-	c = check_digits;
-	printf("%d\n", c);
 	if (check_digits(stack_a, len))
 	{
 		write(1, "Error\n", 6);
@@ -40,44 +36,16 @@ int	main(int argc, char **argv)
 	}
 	temp = char_to_long(stack_a, len);
 	final_array = ft_longdup(temp, len);
-	temp = bubble_sort(temp, len);
-	final_array = array_iteration(temp, final_array, len);
 	if (check_duplicate(final_array, len) || check_max(final_array, len))
 	{
 		free(temp);
 		free(final_array);
 		return (0);
 	}
+	temp = bubble_sort(temp, len);
+	final_array = array_iteration(temp, final_array, len);
 	create_structs(final_array, len);
 	return (0);
-}
-
-void	print(long *a, int len)
-{
-	int	i;
-	int	num;
-
-	i = 0;
-	while (i < len)
-	{
-		printf("%ld\n", a[i]);
-		i++;
-	}
-	printf("\n");
-}
-
-void	print_stack(t_stack *stack)
-{
-	int	i;
-	int	num;
-
-	i = 0;
-	while (i < stack->capacity)
-	{
-		printf("%ld\n", stack->stack[i]);
-		i++;
-	}
-	printf("\n");
 }
 
 char	**create_array(char **argv, int argc, int *len, int *i)
@@ -155,3 +123,31 @@ long	*array_iteration(long *temp, long *final_array, int len)
 	}
 	return (result);
 }
+
+// void	print(long *a, int len)
+// {
+// 	int	i;
+// 	int	num;
+
+// 	i = 0;
+// 	while (i < len)
+// 	{
+// 		printf("%ld\n", a[i]);
+// 		i++;
+// 	}
+// 	printf("\n");
+// }
+
+// void	print_stack(t_stack *stack)
+// {
+// 	int	i;
+// 	int	num;
+
+// 	i = 0;
+// 	while (i < stack->capacity)
+// 	{
+// 		printf("%ld\n", stack->stack[i]);
+// 		i++;
+// 	}
+// 	printf("\n");
+// }

@@ -6,11 +6,22 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 15:04:12 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/15 21:21:21 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/15 23:50:49 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	create_structs(long *final_array, int len)
+{
+	t_stack	*stack__a;
+	t_stack	*stack__b;
+
+	stack__a = generate_stack(len);
+	stack__b = generate_stack(len);
+	fill_stack(stack__a, final_array);
+	call_sorting_algorithm(stack__a, stack__b);
+}
 
 long	*char_to_long(char **stack_a, int len)
 {
@@ -46,19 +57,19 @@ void	fill_stack(t_stack *stack, long *final_array)
 		stack->size++;
 		i++;
 	}
-	// free(final_array);
+	free(final_array);
 }
 
-void	fill_stack_b(t_stack *stack, long *final_array)
-{
-	size_t	i;
+// void	fill_stack_b(t_stack *stack, long *final_array)
+// {
+// 	size_t	i;
 
-	i = 0;
-	while (i < 3)
-	{
-		stack->stack[i] = final_array[i];
-		stack->size++;
-		i++;
-	}
-	// free(final_array);
-}
+// 	i = 0;
+// 	while (i < 3)
+// 	{
+// 		stack->stack[i] = final_array[i];
+// 		stack->size++;
+// 		i++;
+// 	}
+// 	// free(final_array);
+// }
