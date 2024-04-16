@@ -6,13 +6,26 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 23:13:34 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/16 20:57:55 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/16 22:00:11 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 void	call_sorting_algorithm(t_stack *a, t_stack *b)
+{
+	int	i;
+
+	i = check_if_sort(a);
+	if (i == a->capacity)
+		return ;
+	if (a->capacity == 3)
+		sort_3(a);
+	if (a->capacity == 5)
+		sort_5(a, b);
+}
+
+int	check_if_sort(t_stack *a)
 {
 	int	i;
 
@@ -23,13 +36,7 @@ void	call_sorting_algorithm(t_stack *a, t_stack *b)
 			break ;
 		i++;
 	}
-	printf("Capacity : %i, i : %d\n", a->capacity, i);
-	if (i == a->capacity)
-		return ;
-	if (a->capacity == 3)
-		sort_3(a);
-	if (a->capacity == 5)
-		sort_5(a, b);
+	return (i);
 }
 
 void	sort_3(t_stack *a)
@@ -62,6 +69,9 @@ void	sort_3(t_stack *a)
 
 void	sort_5(t_stack *a, t_stack *b)
 {
+	int	i;
+
+	i = 0;
 	while (a->stack[0] != 0)
 	{
 		ra(a);
@@ -73,7 +83,10 @@ void	sort_5(t_stack *a, t_stack *b)
 	}
 	pb(a, b);
 	a->size = 3;
-	sort_3(a);
+	i = check_if_sort(a);
+	printf("%d\n", i);
+	if (i != a->size)
+		sort_3(a);
 	pa(a, b);
 	pa(a, b);
 	print_stack(a);

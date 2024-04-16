@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 18:35:11 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/16 20:56:59 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/16 21:56:40 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 typedef struct stack {
 	long	*stack;
-	size_t	size;
+	int		size;
 	int		capacity;
 }	t_stack;
 
@@ -61,5 +61,6 @@ void	short_algorithm(t_stack *stack__a, t_stack *stack__b);
 void	print_stack(t_stack *stack);
 void	sort_3(t_stack *a);
 void	sort_5(t_stack *a, t_stack *b);
+int		check_if_sort(t_stack *a);
 
 #endif
