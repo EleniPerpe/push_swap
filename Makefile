@@ -6,31 +6,36 @@
 #    By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 19:47:32 by eperperi          #+#    #+#              #
-#    Updated: 2024/04/14 14:00:28 by eperperi         ###   ########.fr        #
+#    Updated: 2024/04/16 21:27:04 by eperperi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+NAME = push_swap
 
 CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = push_swap.c utils.c ft_split.c reverse_rotate_commands.c rotate_commands.c utils_2.c push_commands.c
+FSANITIZER = -g -fsanitize=address
 
-OFILES = $(SRCS:.c=.o)
+SOURCES  =  push_swap.c utils.c ft_split.c reverse_rotate_commands.c rotate_commands.c \
+struct_commands.c push_commands.c ft_memmove.c swap_commads.c error_checks.c \
+ sorting_algorithms.c
 
-NAME = libftprintf.a
+OBJS = $(SOURCES:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OFILES)
-	ar rcs $(NAME) $(OFILES)
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(FSANITIZER) $(OBJS) -o $(NAME)
 
 clean:
-	$(RM) -f $(OFILES)
+	rm -rf $(OBJS)
 
 fclean: clean
-	$(RM) -f $(NAME)
+	rm -rf $(NAME)
 
 re: fclean all
 
-.PHONY:  all clean fclean re bonus
+t: $(NAME)
+	./$(NAME) 5 7 3

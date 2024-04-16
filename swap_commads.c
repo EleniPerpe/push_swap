@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 16:01:55 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/15 15:45:31 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/16 21:02:18 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	sa(t_stack *a)
 	int		flag;
 
 	flag = 0;
-	if (a->size != 0 || a->size != 1)
+	if (a->size > 1)
 	{
 		temp = a->stack[0];
 		a->stack[0] = a->stack[1];
@@ -35,7 +35,7 @@ void	sb(t_stack *b)
 	int		flag;
 
 	flag = 0;
-	if (b->size != 0 || b->size != 1)
+	if (b->size > 1)
 	{
 		temp = b->stack[0];
 		b->stack[0] = b->stack[1];

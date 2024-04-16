@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 15:04:12 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/15 23:50:49 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/16 20:57:35 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ t_stack	*generate_stack(size_t len)
 
 void	fill_stack(t_stack *stack, long *final_array)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (i < stack->capacity)

@@ -6,22 +6,75 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 23:13:34 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/15 23:49:01 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/16 20:57:55 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	call_sorting_algorithm(t_stack *stack__a, t_stack *stack__b)
+void	call_sorting_algorithm(t_stack *a, t_stack *b)
 {
-	if (stack__a->capacity == 2)
+	int	i;
+
+	i = 1;
+	while (i < a->capacity)
 	{
-		short_algorithm(stack__a, stack__b);
+		if (a->stack[i] < a->stack[i - 1])
+			break ;
+		i++;
 	}
+	printf("Capacity : %i, i : %d\n", a->capacity, i);
+	if (i == a->capacity)
+		return ;
+	if (a->capacity == 3)
+		sort_3(a);
+	if (a->capacity == 5)
+		sort_5(a, b);
 }
 
-void	short_algorithm(t_stack *stack__a, t_stack *stack__b)
+void	sort_3(t_stack *a)
 {
-	if (stack__a->stack[0] > stack__a->stack[1])
-		sa(stack__a);
+	if (a->stack[0] > a->stack[1] && a->stack[1] < a->stack[2])
+	{
+		if (a->stack[0] > a->stack[2])
+			ra(a);
+		else
+			sa(a);
+	}
+	else if (a->stack[0] < a->stack[1])
+	{
+		if (a->stack[0] < a->stack[2])
+		{
+			rra(a);
+			sa(a);
+		}
+		else
+			rra(a);
+	}
+	else if (a->stack[0] > a->stack[1] && a->stack[1] > a->stack[2])
+	{
+		ra(a);
+		sa(a);
+	}
+	else
+		return ;
+}
+
+void	sort_5(t_stack *a, t_stack *b)
+{
+	while (a->stack[0] != 0)
+	{
+		ra(a);
+	}
+	pb(a, b);
+	while (a->stack[0] != 1)
+	{
+		ra(a);
+	}
+	pb(a, b);
+	a->size = 3;
+	sort_3(a);
+	pa(a, b);
+	pa(a, b);
+	print_stack(a);
 }

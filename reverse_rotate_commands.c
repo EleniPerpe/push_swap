@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:23:33 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/15 16:58:31 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/16 20:54:07 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,10 @@ void	rra(t_stack *a)
 {
 	int	i;
 	int	temp;
-	int	swap;
 	int	flag;
 
 	flag = 0;
-	i = a->capacity - 1;
+	i = a->size - 1;
 	temp = a->stack[i];
 	while (i > 0)
 	{
@@ -31,7 +30,7 @@ void	rra(t_stack *a)
 	if (flag == 1)
 	{
 		a->stack[0] = temp;
-		write (1, "rr\n\n", 4);
+		write (1, "rra\n", 4);
 	}
 }
 
@@ -39,11 +38,10 @@ void	rrb(t_stack *b)
 {
 	int	i;
 	int	temp;
-	int	swap;
 	int	flag;
 
 	flag = 0;
-	i = b->capacity - 1;
+	i = b->size - 1;
 	temp = b->stack[i];
 	while (i > 0)
 	{
@@ -63,7 +61,6 @@ void	rrr(t_stack *a, t_stack *b)
 	int	i;
 	int	temp_a;
 	int	temp_b;
-	int	swap;
 	int	flag;
 
 	flag = 0;

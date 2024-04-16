@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 14:44:48 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/15 23:51:58 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/16 20:54:38 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ int	main(int argc, char **argv)
 
 char	**create_array(char **argv, int argc, int *len, int *i)
 {
-	long	*temp;
 	char	**stack_a;
 	int		size;
 
@@ -138,16 +137,15 @@ long	*array_iteration(long *temp, long *final_array, int len)
 // 	printf("\n");
 // }
 
-// void	print_stack(t_stack *stack)
-// {
-// 	int	i;
-// 	int	num;
+void	print_stack(t_stack *stack)
+{
+	int	i;
 
-// 	i = 0;
-// 	while (i < stack->capacity)
-// 	{
-// 		printf("%ld\n", stack->stack[i]);
-// 		i++;
-// 	}
-// 	printf("\n");
-// }
+	i = 0;
+	while (i < stack->capacity)
+	{
+		printf("%ld\n", stack->stack[i]);
+		i++;
+	}
+	printf("\n");
+}

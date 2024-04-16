@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_commands_old.c                                :+:      :+:    :+:   */
+/*   push_commands.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 13:15:50 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/15 20:04:46 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/16 20:55:12 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	pb(t_stack *a, t_stack *b)
 {
 	int			i;
-	long		temp;
 	long		number;
 
 	i = b->capacity - 1;
@@ -37,13 +36,12 @@ void	pb(t_stack *a, t_stack *b)
 void	pa(t_stack *a, t_stack *b)
 {
 	int			i;
-	long		temp;
 	long		number;
 
 	i = a->capacity - 1;
-	if (a->size == 0)
+	if (b->size == 0)
 		return ;
-	number = a->stack[0];
+	number = b->stack[0];
 	while (i > 0)
 	{
 		a->stack[i] = a->stack[i - 1];

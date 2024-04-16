@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:57:00 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/15 23:45:59 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/16 21:28:11 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	check_duplicate(long *final_array, int len)
 	while (i < len)
 	{
 		j = 0;
-		while (j < len)
+		while (j < len - 1)
 		{
 			if (j == i)
 				j++;
@@ -44,7 +44,7 @@ int	check_max(long *final_array, int len)
 	i = 0;
 	while (i < len)
 	{
-		if (final_array[i] > 2147483647)
+		if (final_array[i] > 2147483647 || final_array[i] < -2147483648)
 		{
 			write(1, "Error\n", 6);
 			return (1);
@@ -54,7 +54,7 @@ int	check_max(long *final_array, int len)
 	return (0);
 }
 
-int	check_digits(char **stack_a, int len)
+int	check_digits(char **a, int len)
 {
 	int	i;
 	int	j;
@@ -65,9 +65,9 @@ int	check_digits(char **stack_a, int len)
 	while (i < len)
 	{
 		j = 0;
-		while (stack_a[i][j] != '\0')
+		while (a[i][j] != '\0')
 		{
-			if (stack_a[i][j] >= '0' && stack_a[i][j] <= '9')
+			if ((a[i][j] >= '0' && a[i][j] <= '9') || a[i][j] == '-')
 				flag = 0;
 			else
 			{

@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 18:35:11 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/15 23:45:29 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/16 20:56:59 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 typedef struct stack {
 	long	*stack;
 	size_t	size;
-	size_t	capacity;
+	int		capacity;
 }	t_stack;
 
 void	fill_stack_b(t_stack *stack, long *final_array);
@@ -59,5 +59,7 @@ int		check_digits(char **stack_a, int len);
 void	call_sorting_algorithm(t_stack *stack__a, t_stack *stack__b);
 void	short_algorithm(t_stack *stack__a, t_stack *stack__b);
 void	print_stack(t_stack *stack);
+void	sort_3(t_stack *a);
+void	sort_5(t_stack *a, t_stack *b);
 
 #endif
