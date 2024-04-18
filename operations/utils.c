@@ -6,11 +6,11 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 19:54:37 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/18 16:44:28 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/18 17:16:25 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 long	ft_atol(char *str)
 {

@@ -6,11 +6,11 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 14:26:33 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/18 16:42:14 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/18 17:25:37 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	bits_calc(int num)
 {

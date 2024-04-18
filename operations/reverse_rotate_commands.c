@@ -6,11 +6,11 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:23:33 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/18 16:42:44 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/18 17:25:11 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	rra(t_stack *a)
 {

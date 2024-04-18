@@ -6,11 +6,11 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 23:13:34 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/17 16:06:02 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:25:37 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	call_sorting_algorithm(t_stack *a, t_stack *b)
 {
@@ -18,7 +18,10 @@ void	call_sorting_algorithm(t_stack *a, t_stack *b)
 
 	i = check_if_sort(a);
 	if (i == a->capacity)
+	{
+		free(b);
 		return ;
+	}
 	else if (a->capacity == 3)
 		sort_3(a);
 	else if (a->capacity == 4)
@@ -27,6 +30,7 @@ void	call_sorting_algorithm(t_stack *a, t_stack *b)
 		sort_5(a, b);
 	else
 		radix(a, b);
+	free(b);
 }
 
 int	check_if_sort(t_stack *a)

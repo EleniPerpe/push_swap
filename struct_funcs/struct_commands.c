@@ -6,11 +6,11 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 15:04:12 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/18 16:43:54 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/18 19:39:38 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	create_structs(long *final_array, int len)
 {

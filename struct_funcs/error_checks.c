@@ -6,11 +6,11 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:57:00 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/16 21:28:11 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/18 17:25:33 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	check_duplicate(long *final_array, int len)
 {

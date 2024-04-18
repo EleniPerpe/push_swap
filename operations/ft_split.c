@@ -6,11 +6,11 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 12:33:06 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/15 21:49:07 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/18 17:08:47 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int		counter(char const *s, char c);
 char	*get_string(char const *s, int i, int len);

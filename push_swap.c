@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 14:44:48 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/18 16:40:55 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/18 19:39:00 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	main(int argc, char **argv)
 	int		len;
 
 	stack_a = create_array(argv, argc, &len, &i);
+	// if (stack_a == NULL)
+	// 	return (0);
 	if (check_digits(stack_a, len))
 	{
 		write(1, "Error\n", 6);
@@ -35,6 +37,7 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	temp = char_to_long(stack_a, len);
+	free(stack_a);
 	final_array = ft_longdup(temp, len);
 	if (check_duplicate(final_array, len) || check_max(final_array, len))
 	{
@@ -45,6 +48,8 @@ int	main(int argc, char **argv)
 	temp = bubble_sort(temp, len);
 	final_array = array_iteration(temp, final_array, len);
 	create_structs(final_array, len);
+	free(temp);
+	system("leaks push_swap");
 	return (0);
 }
 
@@ -55,6 +60,8 @@ char	**create_array(char **argv, int argc, int *len, int *i)
 
 	if (argc == 2)
 		stack_a = ft_split(argv[1], ' ', i);
+	else if (argc == 1)
+		return (NULL);
 	else
 	{
 		stack_a = (char **)malloc(argc * sizeof(char *));

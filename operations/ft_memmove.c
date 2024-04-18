@@ -6,11 +6,11 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 12:46:46 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/14 19:20:14 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/18 17:23:03 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
