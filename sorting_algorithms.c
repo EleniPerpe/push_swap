@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 23:13:34 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/16 22:00:11 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/17 16:06:02 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,19 @@
 
 void	call_sorting_algorithm(t_stack *a, t_stack *b)
 {
-	int	i;
+	int		i;
 
 	i = check_if_sort(a);
 	if (i == a->capacity)
 		return ;
-	if (a->capacity == 3)
+	else if (a->capacity == 3)
 		sort_3(a);
-	if (a->capacity == 5)
+	else if (a->capacity == 4)
+		sort_4(a, b);
+	else if (a->capacity == 5)
 		sort_5(a, b);
+	else
+		radix(a, b);
 }
 
 int	check_if_sort(t_stack *a)
@@ -84,10 +88,25 @@ void	sort_5(t_stack *a, t_stack *b)
 	pb(a, b);
 	a->size = 3;
 	i = check_if_sort(a);
-	printf("%d\n", i);
 	if (i != a->size)
 		sort_3(a);
 	pa(a, b);
 	pa(a, b);
-	print_stack(a);
+}
+
+void	sort_4(t_stack *a, t_stack *b)
+{
+	int	i;
+
+	i = 0;
+	while (a->stack[0] != 0)
+	{
+		ra(a);
+	}
+	pb(a, b);
+	a->size = 3;
+	i = check_if_sort(a);
+	if (i != a->size)
+		sort_3(a);
+	pa(a, b);
 }

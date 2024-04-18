@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:23:33 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/16 20:54:07 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/18 16:42:44 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	rrb(t_stack *b)
 	if (flag == 1)
 	{
 		b->stack[0] = temp;
-		write (1, "rr\n\n", 4);
+		write (1, "rrb\n", 4);
 	}
 }
 
@@ -78,6 +78,6 @@ void	rrr(t_stack *a, t_stack *b)
 	{
 		a->stack[0] = temp_a;
 		b->stack[0] = temp_b;
-		write (1, "rrr\n\n", 4);
+		write (1, "rrr\n", 4);
 	}
 }

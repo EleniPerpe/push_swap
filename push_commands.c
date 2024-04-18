@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 13:15:50 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/16 20:55:12 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:25:37 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	pb(t_stack *a, t_stack *b)
 	int			i;
 	long		number;
 
-	i = b->capacity - 1;
 	if (a->size == 0)
 		return ;
+	i = b->capacity - 1;
 	number = a->stack[0];
 	while (i > 0)
 	{
@@ -38,9 +38,9 @@ void	pa(t_stack *a, t_stack *b)
 	int			i;
 	long		number;
 
-	i = a->capacity - 1;
 	if (b->size == 0)
 		return ;
+	i = a->capacity - 1;
 	number = b->stack[0];
 	while (i > 0)
 	{

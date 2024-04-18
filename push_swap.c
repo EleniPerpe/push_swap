@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 14:44:48 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/16 20:54:38 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/18 16:40:55 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,31 +121,4 @@ long	*array_iteration(long *temp, long *final_array, int len)
 		i++;
 	}
 	return (result);
-}
-
-// void	print(long *a, int len)
-// {
-// 	int	i;
-// 	int	num;
-
-// 	i = 0;
-// 	while (i < len)
-// 	{
-// 		printf("%ld\n", a[i]);
-// 		i++;
-// 	}
-// 	printf("\n");
-// }
-
-void	print_stack(t_stack *stack)
-{
-	int	i;
-
-	i = 0;
-	while (i < stack->capacity)
-	{
-		printf("%ld\n", stack->stack[i]);
-		i++;
-	}
-	printf("\n");
 }

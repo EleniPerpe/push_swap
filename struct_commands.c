@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 15:04:12 by eperperi          #+#    #+#             */
-/*   Updated: 2024/04/16 20:57:35 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/04/18 16:43:54 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,17 +59,3 @@ void	fill_stack(t_stack *stack, long *final_array)
 	}
 	free(final_array);
 }
-
-// void	fill_stack_b(t_stack *stack, long *final_array)
-// {
-// 	size_t	i;
-
-// 	i = 0;
-// 	while (i < 3)
-// 	{
-// 		stack->stack[i] = final_array[i];
-// 		stack->size++;
-// 		i++;
-// 	}
-// 	// free(final_array);
-// }
